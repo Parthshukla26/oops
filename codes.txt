@@ -1,0 +1,741 @@
+
+// #include <bits/stdc++.h> 
+// using namespace std;
+
+
+//Basics
+//---------------------------------------------------------
+/*#include <bits/stdc++.h> 
+using namespace std;
+
+class Employee {
+private:
+    int base_salary, emp_num;
+
+public:
+    int ctc, joining_date;
+
+    void filldata(int base_salary, int emp_num);
+    void detail();
+};
+
+void Employee::filldata(int base_salary, int emp_num) {
+    this->base_salary = base_salary;  // Store the base_salary
+    this->emp_num = emp_num;          // Store the emp_num
+    ctc = base_salary + 100000;
+    joining_date = emp_num + 10;
+}
+
+void Employee::detail() {
+    cout << "CTC: " << ctc << endl;
+    cout << "Joining Date: " << joining_date << endl;
+    cout << "Base Salary: " << base_salary << endl;
+    cout << "Employee Number: " << emp_num << endl;
+}
+
+int main() {
+    Employee Parth;
+    Parth.filldata(220000, 220215);
+    Parth.detail();  // Call the detail() method to print the details
+    return 0;
+}
+*/
+//====================================================================
+
+//Basics
+
+/*
+#include<iostream> // to use cin , cout.
+
+#include<string> // to use the string class 
+using namespace std; // to directly use standard library names without using "std::".
+
+class binary{       
+          string s; 
+public:
+     void read(void);
+     void chk_binary(void);
+     
+};
+      
+ void binary :: read(void) 
+ {
+      cout << "Enter a binary no.:" << endl;
+      cin>>s;
+ }
+ 
+void binary :: chk_binary(void)
+{
+     for(int i=0; i< s.length() ; i++)
+     {
+         if(s.at(i)!='0' && s.at(i)!='1'){
+           cout << "Incorrect binary format." << endl;
+           exit(0);
+         }
+     }
+
+}    
+int main()
+{    
+    binary b; 
+    
+    b.read(); 
+    b.chk_binary();    
+    return 0;
+
+}
+
+*/
+
+//===================================================
+
+// arrays in classes
+
+/*
+#include<iostream>
+using namespace std;
+
+class poultry
+{
+    int chickTagNo[50];
+    int chickPrice[50];
+    int increment;
+    public :
+    void init_increment(){ increment = 0;}
+    void setPrice();
+    void displayPrice();
+};
+
+void poultry :: setPrice(){
+    
+    cout<<"Enter the tag no of the chicken :"<<increment+1<<endl;
+    cin>>chickTagNo[increment];
+    
+    cout<<"Enter the Price of the chicken :"<<endl;
+    cin>>chickPrice[increment];
+    increment++;
+    
+}
+
+void poultry :: displayPrice(){
+    
+    for (int i=0; i<increment;i++)
+    {
+        cout<<"The price of chicken with tagNo :"<<chickTagNo[i]<<" is :"<<chickPrice[i]<<endl;
+    }
+}
+int main(){
+    poultry chicken;
+    chicken.init_increment();
+   for(int i=0;i<3;i++){
+   chicken.setPrice();
+   }
+    chicken.displayPrice();
+    return 0;
+    
+}
+
+*/
+
+
+
+// class Employee {
+// private:
+//     int base_salary, emp_num;
+
+// public:
+//     int ctc, joining_date;
+
+//     void filldata(int base_salary, int emp_num);
+//     void detail();
+// };
+
+// void Employee::filldata(int base_salary, int emp_num) {
+//     this->base_salary = base_salary;  // Store the base_salary
+//     this->emp_num = emp_num;          // Store the emp_num
+//     ctc = base_salary + 100000;
+//     joining_date = emp_num + 10;
+// }
+
+// void Employee::detail() {
+//     cout << "CTC: " << ctc << endl;
+//     cout << "Joining Date: " << joining_date << endl;
+//     cout << "Base Salary: " << base_salary << endl;
+//     cout << "Employee Number: " << emp_num << endl;
+// }
+
+//=============================================================
+
+// default, parameterized, copy constructor,
+
+// class customer {
+//     string name;
+//     int account_number;
+//     int *balance;
+// public:
+//     //default constructor
+//     customer() {}
+
+//     //parameterized constructor
+//     customer(string name, int account_number, int balance) {
+//         this->name = name;
+//         this->account_number = account_number;
+//         this->balance = new int;  //dynamically allocating the memory
+//       *(this->balance) = balance; //assigning the value to the dynamically allocated memory
+//     }
+
+//     void display() {
+//         cout << "Name: " << name << '\n';
+//         cout << "Account number is: " << account_number << '\n';
+//         cout << "Balance is: " << *(this->balance) << '\n'; //dereferencing the pointer to get the value
+//     }
+
+//     //copy constructor
+//     customer(const customer &b) {
+//         this->name = b.name;
+//         this->account_number = b.account_number;
+//         balance = new int; //allocate new memory
+//         *(this->balance)= *(b.balance); //copy the value
+//     }
+
+//     //destructor
+//     ~customer() {
+//         delete balance;
+//         cout << "Destructor is called" << endl;
+//     }
+// };
+
+// int main() {
+//     customer C1("Parth", 12354, 17123456);
+//     customer C2(C1);
+//     C1.display();
+//     C2.display();
+//     return 0;
+// }
+//=======================================================
+
+//destructor
+
+// class customer{
+
+//     string name ;
+//     int account_number;
+//     int *balance;
+//     public:
+//     //default 
+//     customer(){
+
+//     }
+//     //paramerterizer 
+//     customer(string name, int account_number, int balance){
+//         this->name=name;
+//         this->account_number=account_number;
+//         this->balance=new int ;  //dynamically allocating the memory to show the use of the destructure
+//         *(this->balance)=balance; //dunamically memory allocation
+
+//     }
+
+//     void display(){
+//         cout<<"Name"<<name<<'\n';
+//         cout<<"Account number is:-"<<account_number<<'\n';
+//         cout<<"Balance is:-"<<balance<<'\n';
+//     }
+//     //copy constructor
+//     customer(customer &b){
+//         this->name=b.name;
+//         this->account_number=b.account_number;
+//         *(this->balance)=*(b.balance);
+//     }
+//     //destructor 
+//     ~ customer(){
+//         delete balance; 
+//         cout<<"destructor is called "<<endl;
+//     }
+
+// }
+// int main(){
+//     customer C1("Parth",12354,17123456);
+//     customer C2(C1);
+//     C1.display();
+//     C2.display();
+//     return 0;
+// }
+
+//=====================================
+
+//constructor & destructor order
+
+// class customer{
+// int number;
+//     public:
+//     //default 
+//     customer(int number ){
+//    cout<<"constructor is called"<<number<<'\n';
+//     }
+//     //paramerterizer
+//     customer(string name, int account_number, int balance){
+//         this->name=name;
+//         this->account_number=account_number;
+//         this->balance=balance;
+//     }
+
+//     void display(){
+//         cout<<"Name"<<name<<'\n';
+//         cout<<"Account number is:-"<<account_number<<'\n';
+//         cout<<"Balance is:-"<<balance<<'\n';
+//     }
+//     //copy constructor
+//     customer(customer &b){
+//         this->name=b.name;
+//         this->account_number=b.account_number;
+//         this->balance=b.balance;
+//     }
+//     //destructor
+//     ~customer(int number ){
+//    cout<<"destructor is called"<<number<<'\n';
+//     }
+
+// }
+// int main(){
+//     customer C1(1),C2(2),C3(3);
+//     return 0;
+// }
+
+//============================================
+
+// constructor and destructor order
+
+// class customer{
+    
+// int number;
+//     public:
+    
+//     //default 
+//     customer(int number ){
+//         this->number=number;
+//    cout<<"constructor is called"<<number<<'\n';
+//     }
+    
+//     //destructor
+//     ~customer(){
+//    cout<<"destructor is called"<<number<<'\n';
+//     }
+
+// };
+
+// int main(){
+//     customer C1(1),C2(2),C3(3);
+//     return 0;
+// }
+
+
+//=======================================================
+
+//inheritance , protected keyword usage 
+
+// class human{
+//     string skin_color;
+//     string religion;
+//     protected:  //here the incapsulation proprty of protected keyword allows u to share the 
+//                   // info in the derived classes and also protect from external usage  
+//     int age;
+//     string name;
+//     public:
+//     void info(int age,string name ,string skin_color ,string religion){
+//         this->skin_color=skin_color;
+//         this->religion=religion;
+//     }
+// };
+
+// class student:public human{
+//     string grade;
+//     public:
+//     int phone_num;
+//     student(int age, string name, int phone_num,string grade){
+//         this->age=age;
+//         this->name=name;
+//         this->phone_num=phone_num;
+//         this->grade=grade;
+//     }
+//     void display() {
+//         cout << "Student Name: " << name << ", Age: " << age << ", Phone: " << phone_num << ", Grade: " << grade << endl;
+//     }
+    
+// };
+
+// class teacher:public human{
+//     int salary;
+//     public:
+//     int phone_num;
+//     teacher(int age, string name, int phone_num,int salary){
+//         this->age=age;
+//         this->name=name;
+//         this->phone_num=phone_num;
+//         this->salary=salary;
+//     }
+//     void display() {
+//         cout << "Teacher Name: " << name << ", Age: " << age << ", Phone: " << phone_num << ", Salary: " << salary << endl;
+//     }
+    
+// };
+    
+// int main()
+// {
+//    human h1;
+//     h1.info(10, "xi", "white", "atheist");
+
+//     // Initialize student object using the constructor
+//     student s1(21, "Parth", 9696414204, "AA");
+//     s1.display();
+
+//     // Initialize teacher object using the constructor
+//     teacher t1(51, "Praful", 999999999, 30000);
+//     t1.display();
+
+
+//     return 0;
+// }
+
+//======================================
+
+//single inheritance
+
+// class human{
+//     protected:
+//     int age;
+//     string name;
+//     public:
+//     human(int age,string name){
+//         this->age=age;
+//         this->name=name;
+//     }
+// void display() {
+//         cout << "Student Name: " << name << ", Age: " << age << endl;
+//     }
+// };
+
+// class student:public human{
+//     string grade;
+//     public:
+//     int phone_num;
+//     student(int age, string name, int phone_num,string grade):human( age, name)
+//     {
+//         // this->age=age;
+//         // this->name=name;
+//         this->phone_num=phone_num;
+//         this->grade=grade;
+//     }
+//     void display() {
+//         cout << "Student Name: " << name << ", Age: " << age << ", Phone: " << phone_num << ", Grade: " << grade << endl;
+//     }
+    
+// };
+
+// int main()
+// {
+//      student s1(21, "Parth", 96964142, "AA");
+//     s1.display();
+
+
+//     return 0;
+// }
+
+//===============================================================================
+
+//multipath inheritance 
+
+//
+
+// class human{
+//     public:
+//     string name;
+//     void display(){
+//         cout<<"name is"<<name<<'\n';
+//     }
+//     human(){
+//     }
+    
+// };
+// class engineer:public virtual human{
+//     public:
+//     int grade;
+//     void CG(){
+//         cout<<"Total CGPA is"<<grade<<endl;
+//     }
+//         engineer(){
+//             cout<<"engineer is called\n";
+//         }
+// };
+
+// class research:public virtual human{
+//     public:
+//     string field;
+//     void domain(){
+//         cout<<"research field is"<<field<<endl;
+//     }
+//     research(){
+//             cout<<"research is called\n";
+//         }
+// };
+
+// class research_engineer:public engineer,public research{
+//     public:
+//     int salary;
+//     void package(){
+//         cout<<"Package is "<<salary<<endl;
+//     }
+//     research_engineer(){
+//             cout<<"research_engineer is called\n";
+//         }
+//     research_engineer(string name,int grade,string field,int salary){
+//         this->name=name;
+//         this->grade=grade;
+//         this->field=field;
+//         this->salary=salary;
+//         }
+//         void display(){
+//             cout<<"Name is"<<name<<"CGPA is"<<grade<<"Research field is"<<field<<"salary is"<<salary<<endl;
+//         }
+        
+// };
+
+// 	int main(){
+// 	    research_engineer r1("OM",4,"data_scientist",10);;
+// 	    r1.display();
+// 	return 0;
+// }
+
+//=====================================================================
+
+// function overloading 
+
+// class Property{
+//      int length;
+//      int breadth;
+//      int height;
+//      public:
+//      Property(int length){
+//          this->length=length;
+//          cout<<"length is"<<length<<endl;
+//      } 
+//      Property(int length,int breadth){
+//          int area=0;
+//          area=length*breadth;
+//          cout<<"area of the structure is "<<area<<endl;
+//      }
+//      Property(int length,int breadth,int height){
+//          int volume=0;
+//          volume=length*breadth*height;
+//          cout<<"volume of the structure is "<<volume<<endl;
+//      }
+//     };
+    
+//     int main()
+//     {
+//       Property c1(1);
+//       Property c2(3,4);
+//       Property c3(2,2,2);
+//         return 0;
+//     }
+
+
+//======================================================================
+
+//Operator Overloading
+
+// class Complex{
+//      int real;
+//      int img;
+//      public:
+//      Complex(){
+         
+//      } 
+//      Complex(int real,int img){
+//         this->real=real;
+//         this->img=img;
+//      };
+     
+//      Complex operator+(Complex &c){ //c2 is passes as argument 
+//          Complex ans;
+//          ans.real=c.real+this->real; //this->real is from c1 
+//          ans.img=c.img+this->img;
+//          return ans;
+//      };
+     
+//      void display(){
+//          cout<<real<<"+j"<<img<<endl;
+//      }
+     
+//     };
+    
+//     int main()
+//     {
+//       Complex c1(2,3);
+//       Complex c2(3,4);
+//       Complex c3;
+//       c3=c1+c2;
+//       c3.display();
+      
+      
+//         return 0;
+//     }
+
+//======================================================================
+
+// virtual function and its usage
+
+    //abstract class means we cant create the obj from this class
+    // class Animals{
+    //     public:
+    //   virtual void speaks(){ 
+    //       //virtual function when virtual function return nothing then 
+    //       //it becomes pure virtual function and class is then called abstract classs
+          
+    //       cout<<"huhuiihuii"<<endl;
+    //   }
+    // };
+    
+    // class Dog:public Animals{
+    //     public:
+    //     void speaks(){
+    //         cout<<"Bark"<<endl;
+    //     }
+    // };
+    
+    // class cat:public Animals{
+    //     public:
+    //     void speaks(){
+    //         cout<<"Mewow"<<endl;
+    //     }
+    // };
+    
+    // class Lion:public Animals{
+    //     public:
+    //     void speaks(){
+    //         cout<<"Roar"<<endl;
+    //     }
+    // };
+    
+    // int main()
+    // {
+    //     // Animals *p;
+    //    vector<Animals*> animal_stor;
+    //    animal_stor.push_back(new Animals());
+    //    animal_stor.push_back(new Dog());
+    //    animal_stor.push_back(new Lion());
+    //    animal_stor.push_back(new cat());
+    //    for(int i=0;i<sizeof(animal_stor);i++){
+    //     //   p=animal_stor[i];
+    //        animal_stor[i]->speaks();      
+           
+    //    }
+    //     return 0;
+    // };
+
+//============================================================================
+
+// pure virtual fucntion and abstract class
+
+   //abstract class means we cant create the obj from this class
+    class Animals{
+        public:
+      virtual void speaks()=0;
+       //virtual function when virtual function return nothing then 
+          //it becomes pure virtual function and class is then called abstract classs
+    };
+    
+    class Dog:public Animals{
+        public:
+        void speaks(){
+            cout<<"Bark"<<endl;
+        }
+    };
+    
+    class cat:public Animals{
+        public:
+        void speaks(){
+            cout<<"Mewow"<<endl;
+        }
+    };
+    
+    class Lion:public Animals{
+        public:
+        void speaks(){
+            cout<<"Roar"<<endl;
+        }
+    };
+    
+    int main()
+    {
+        // Animals *p;
+       vector<Animals*> animal_stor;
+       // animal_stor.push_back(new Animals()); we cant creat the Animals obj
+       animal_stor.push_back(new Dog());
+       animal_stor.push_back(new Lion());
+       animal_stor.push_back(new cat());
+       for(int i=0;i<sizeof(animal_stor);i++){
+        //   p=animal_stor[i];
+           animal_stor[i]->speaks();      
+           
+       }
+        return 0;
+    };
+
+//============================================================================
+
+// file handling 
+
+   //   ofstream fout;
+    //   fout.open("text.txt");
+    //   cout<<"enter the arry";
+    //   int arr[5];
+    //   for(int i=0;i<4;i++){
+    //       cin>>arr[i]<<" ";
+    //   }
+    //   for(int i=0;i<4;i++){
+    //       fout<<arr[i];
+    //   }
+    //   fout<<"\nhiii hii";
+    //   fout.close();
+       
+//        ifstream fin;
+//        fin.open("text.txt");
+//         // char c;
+//         string line;
+//         // fin>>c;
+//         // c=fin.get();
+//         // while(!fin.eof()){
+//         //     cout<<c;
+//         //     c=fin.get();
+//         // }
+//         while(getline(fin,line)){
+//             cout<<line<<endl;
+//         }
+//        fin.close();
+//        return 0;
+
+// //==========================================
+
+//        //sorting he input  
+
+    
+//     int main()
+//     {
+//         ofstream fout;
+//         fout.open("sorted.text");
+//         cout<<"enter the values";
+//         int arr[5];
+//         for(int i=0;i<4;i++){
+//             cin>>arr[i];
+//             fout<<arr[i]<<" ";
+//         }
+//         fout<<"\nSorted valuse are";
+// sort(arr, arr + 4);
+// for(int i=0;i<4;i++){
+//             fout<<arr[i]<<" ";
+//         }
+//  return 0;
+       
+//===================================
+
+       
